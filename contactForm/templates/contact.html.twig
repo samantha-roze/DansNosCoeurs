@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+ 
+    <!-- affiche un message de succès si le formulaire est bien complété -->
+    {% if correct %}
+    <div class="alert alert-success" role="alert">Email envoyé avec succès !</div>
+    {% else %}
+
+    {{ form_start(form) }}
+
+        <div class="titre">Vos coordonnées</div>
+        <div class="row">
+            <div class="col-lg-6">
+                {{ form_row(form.nom) }}
+            </div>
+            <div class="col-lg-6">
+                {{ form_row(form.prenom) }}
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-lg-6">
+                {% if etreRappele %}
+                    {{ form_row(form.telephone, {'label': "Téléphone*"}) }}
+                {% else %}
+                    {{ form_row(form.telephone) }}
+                {% endif %}
+            </div>
+            <div class="col-lg-6">
+                {{ form_row(form.email) }}
+            </div>
+        </div>
+
+        <!-- si etre rappelé n'est pas selectionné, on cache les checkbox pour le rappel -->
+        <div class="row" id="rappel" {% if etreRappele == false %} style="display: none;" {% endif %}>
+            <div class="col-lg-12">
+                {{ form_row(form.rappel) }}
+            </div>
+        </div>
+
+        <div class="titre">Objet de votre demande</div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{ form_row(form.choix) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                {{ form_row(form.message) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                {{ form_row(form.envoyer) }}
+            </div>
+        </div>   
+
+    {{ form_end(form) }}
+
+    {% endif %}
+
+    </div>
+
+
+{% endblock %}

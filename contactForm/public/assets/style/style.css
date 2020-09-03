@@ -1,0 +1,75 @@
+/* police pour les titres */
+@font-face {
+    font-family: BreeRegular;
+    src: url(/assets/fonts/Bree.woff) format('woff');
+}
+
+/* police pour le formulaire */
+@font-face {
+    font-family: BreeLight;
+    src: url(/assets/fonts/Bree-Light.woff) format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: BreeLight;
+    color: #62657b;
+}
+
+/* titres du formulaire */
+.titre {
+    margin: 0;
+    padding: 0;
+    font-family: BreeRegular;
+    font-size: 16px;
+}
+
+/* bouton de soumission du formulaire */
+.btn-primary {
+    background-color: #FF696E;
+    border-color: #FF696E;
+    border-radius: 4px;
+    font-family: BreeRegular;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #F2555A !important;
+    border-color: #F2555A !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(242,85,90,0.5);
+}
+
+/* bordure des champs */
+.form-control {
+    border-radius: 4px;
+    border-color: #D8D8DE;
+}
+
+.form-control:focus, .form-control:active {
+    border-color: #62657B;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(216,216,222,0.5);
+}
+
+/* pour la présentation du formulaire */
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: 50px auto;
+    background-color: #FFF;
+    box-shadow: 0 5px 20px 0 rgba(98,101,123,.1);
+    padding: 40px 60px;
+    border-radius: 4px;
+}
+
+.alert {
+    margin-bottom: 0;
+}
+
